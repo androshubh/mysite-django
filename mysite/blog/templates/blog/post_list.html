@@ -4,17 +4,13 @@
     </head>
     <body>
         <div>
-            <h1><a href = ""> Django Girls Blog</a></h1>
-        </div>
-        <div>
-            <p>published : 28.01.2017,3:39</p>
-            <h2><a href = "" > My first post</a></h2>
-            <p>Gooooooooooooood Morning Puuuune !!!!!</p>
-        </div>
-        <div>
-            <p>published: 28.01.2017,3:39</p>
-            <h2><a href = ""> My second  post </a></h2>
-            <p>Wooorking site ... hurray !!!!!!</p>
+            {% for post in posts %}
+                <div>
+                    <p>published:{{post.published_date}}</p>
+                    <h1><a href = ""> {{post.title}}</a></h1>
+                    <p>{{ post.text|linebreaksbr }} </p>
+                </div>
+            {% endfor %}
         </div>
     <p>Hi there !</p>
     <p> It works!</p>
